@@ -20,12 +20,12 @@ public class VerificationImpl implements Verification {
 
 
     @Override
-    public boolean areCustumDelimiters(String input, Set<Character> delimiters) {
-        return validators.getDelimiterCharacterValidator().validate(input, delimiters);
+    public boolean areCustumDelimiters(String input) {
+        return validators.getDelimiterCharacterValidator().validate(input);
     }
 
     @Override
-    public boolean haveNumberDelimiters(char start, char end, Set<Character> delimiters) {
-        return validators.getNumberDelimiterValidator().validate(start, end, delimiters);
+    public boolean haveNumberDelimiters(char start, char end) {
+        return validators.getNumberDelimiterValidator().validate(start, end);
     }
 }

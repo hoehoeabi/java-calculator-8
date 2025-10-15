@@ -1,11 +1,14 @@
 package calculator.validation.validator;
 
+import calculator.delimiter.Delimiters;
+
 import java.util.Set;
 
 public class DelimiterCharacterValidator {
 
-    public boolean validate(String input, Set<Character> delimiters) {
+    public boolean validate(String input) {
 
+        Set<Character> delimiters = Delimiters.getInstance().getDelimitersSet();
         for(char c : input.toCharArray()) {
             // 문자이며 구분자에 속해있으면 통과
             if(Character.isLetter(c) && delimiters.contains(c)) continue;
