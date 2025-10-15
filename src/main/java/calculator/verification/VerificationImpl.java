@@ -1,14 +1,15 @@
 package calculator.verification;
 
+import calculator.validation.Validators;
 import calculator.validation.ValidatorsImpl;
 
 import java.util.Set;
 
 public class VerificationImpl implements Verification {
 
-    private final ValidatorsImpl validators;
+    private final Validators validators;
 
-    public VerificationImpl(ValidatorsImpl validators) {
+    public VerificationImpl(Validators validators) {
         this.validators = validators;
     }
 
