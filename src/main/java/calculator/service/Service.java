@@ -1,8 +1,11 @@
 package calculator.service;
 
-import calculator.validation.Validators;
 import calculator.verification.Verification;
 import camp.nextstep.edu.missionutils.Console;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Service {
 
@@ -16,8 +19,33 @@ public class Service {
     private final String CHECK_DELIMITER_FORMART = "^(?://.\\\\n)*\\d+$";
 
     public void run(){
+        Set<Character> delimiters = new HashSet<>(Arrays.asList(',', ':'));
+
         System.out.println("덧셈할 문자열을 입력해 주세요.\n" );
         String input = Console.readLine();
+
+        if(input.isEmpty()){
+            System.out.println("결과 : 0" );
+            return;
+        }
+
+        if(!verification.validateInput(input, INPUT_FORMART))
+            throw new IllegalArgumentException();
+
+        if(verification.validateInput(input, CHECK_DELIMITER_FORMART)){
+            // 구분자 추가 로직
+            // input에서 구분자를 추출하며 추출이 끝난 구분자 구문은 잘라내기
+        }
+
+        if(!verification.areCustumDelimiters(input, delimiters)){
+            throw new IllegalArgumentException();
+        }
+
+        if(verification.haveNumberDelimiters(input.charAt(0), input.charAt(input.length()-1), delimiters)){
+            throw new IllegalArgumentException();
+        }
+
+        // 계산 로직
 
 
 
