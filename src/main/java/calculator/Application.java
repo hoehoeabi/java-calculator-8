@@ -11,7 +11,7 @@ public class Application {
 
         Validators validators = new ValidatorsImpl();
         Verification verification = new VerificationImpl(validators);
-        Service service = new Service(validators, verification);
+        Service service = new Service(verification);
 
         try{
             service.run();
