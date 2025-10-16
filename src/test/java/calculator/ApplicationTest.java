@@ -40,7 +40,15 @@ class ApplicationTest extends NsTest {
         });
     }
 
-    // 예외 시나리오
+    @Test
+    void 숫자_구분자_사용(){
+        assertSimpleTest(() -> {
+            run("//1\\n213:4");
+            assertThat(output()).contains("결과 : 9");
+        });
+    }
+
+    // @@@@@@@@@@@@@@예외 시나리오@@@@@@@@@@@@@@@@@@@@@@@
     @Test
     void 예외_테스트_구분자가_첫글자_실패() {
         assertSimpleTest(() -> {
@@ -92,6 +100,14 @@ class ApplicationTest extends NsTest {
     @Override
     public void runMain() {
         Application.main(new String[]{});
+    }
+
+    @Test
+    void 숫자_구분자_끝에_사용(){
+        assertSimpleTest(() -> {
+            run("//1\\n213:1");
+            assertThat(output()).contains("[ERROR]");
+        });
     }
 
 }
