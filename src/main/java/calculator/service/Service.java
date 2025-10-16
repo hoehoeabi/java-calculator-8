@@ -31,19 +31,22 @@ public class Service {
         }
 
         if(!verification.validateInput(input, INPUT_FORMART))
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(
+                    "들어올 수 있는 패턴은 //{구분자로 사용할 아무문자}\\n" +
+                    "{여러자리숫자}" +
+                    "{여러자리숫자}{문자하나} 입니다.");
 
-        if(verification.validateInput(input, CHECK_DELIMITER_FORMART)){
+        if(verification.validateInput(input, CHECK_DELIMITER_FORMART))
             input = addDelimiter(input);
-        }
 
-        if(!verification.areCustumDelimiters(input)){
-            throw new IllegalArgumentException();
-        }
 
-        if(verification.haveNumberDelimiters(input.charAt(0), input.charAt(input.length()-1))){
-            throw new IllegalArgumentException();
-        }
+        if(!verification.areCustumDelimiters(input))
+            throw new IllegalArgumentException("구분자가 아닌 문자를 구분자로 사용하였습니다");
+
+
+        if(verification.haveNumberDelimiters(input.charAt(0), input.charAt(input.length()-1)))
+            throw new IllegalArgumentException("숫자 구분자가 처음 혹은 마지막글자입니다");
+
 
         System.out.println("결과 : " + sum(input));
 
