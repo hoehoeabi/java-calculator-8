@@ -15,9 +15,10 @@ public class Service {
         this.verification = verification;
     }
 
-    private final String INPUT_FORMART = "^(?://.\\\\n)*\\d+(?:\\D\\d+)*$";
-    private final String CHECK_DELIMITER_FORMART = "^(?://.\\\\n)*.*";
     private final String ONLY_DELIMITER_FORMART = "^(?://.\\\\n)*";
+    private final String INPUT_FORMART = "^(?://.\\\\n)*\\d+(?:\\D\\d+)*$";
+    private final String CHECK_DELIMITER_FORMART = "^(?://.\\\\n)+.*";
+
 
     public void run(){
 
