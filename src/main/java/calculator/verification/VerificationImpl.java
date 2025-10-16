@@ -1,9 +1,6 @@
 package calculator.verification;
 
 import calculator.validation.Validators;
-import calculator.validation.ValidatorsImpl;
-
-import java.util.Set;
 
 public class VerificationImpl implements Verification {
 
@@ -15,17 +12,23 @@ public class VerificationImpl implements Verification {
 
     @Override
     public boolean validateInput(String input, String regex) {
-        return validators.getInputFormatValidator().validate(input, regex);
+        return validators
+                .getInputValidator()
+                .validate(input, regex);
     }
 
 
     @Override
     public boolean areCustumDelimiters(String input) {
-        return validators.getDelimiterCharacterValidator().validate(input);
+        return validators
+                .getCharacterValidator()
+                .validate(input);
     }
 
     @Override
     public boolean haveNumberDelimiters(char start, char end) {
-        return validators.getNumberDelimiterValidator().validate(start, end);
+        return validators
+                .getNumberValidator()
+                .validate(start, end);
     }
 }

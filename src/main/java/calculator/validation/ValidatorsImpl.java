@@ -1,24 +1,24 @@
 package calculator.validation;
 
-import calculator.validation.validator.DelimiterCharacterValidator;
-import calculator.validation.validator.InputFormatValidator;
+import calculator.validation.validator.CharacterDelimiterValidator;
+import calculator.validation.validator.InputValidator;
 import calculator.validation.validator.NumberDelimiterValidator;
 
 public class ValidatorsImpl implements Validators {
 
-    private final InputFormatValidator inputFormatValidator = new InputFormatValidator();
-    private final DelimiterCharacterValidator delimiterCharacterValidator = new DelimiterCharacterValidator();
-    private final NumberDelimiterValidator numberDelimiterValidator = new NumberDelimiterValidator();
+    private final InputValidator inputValidator = new InputValidator();
+    private final CharacterDelimiterValidator characterValidator = new CharacterDelimiterValidator();
+    private final NumberDelimiterValidator numberValidator = new NumberDelimiterValidator();
 
-    public InputFormatValidator getInputFormatValidator() {
-        return inputFormatValidator;
+    public InputValidator getInputValidator() {
+        return inputValidator;
     }
 
-    public DelimiterCharacterValidator getDelimiterCharacterValidator() {
-        return delimiterCharacterValidator;
+    public CharacterDelimiterValidator getCharacterValidator() {
+        return characterValidator;
     }
 
-    public NumberDelimiterValidator getNumberDelimiterValidator() {
-        return numberDelimiterValidator;
+    public NumberDelimiterValidator getNumberValidator() {
+        return numberValidator;
     }
 }

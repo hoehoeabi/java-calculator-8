@@ -1,15 +1,15 @@
 package calculator.validation;
 
-import calculator.validation.validator.DelimiterCharacterValidator;
-import calculator.validation.validator.InputFormatValidator;
+import calculator.validation.validator.CharacterDelimiterValidator;
+import calculator.validation.validator.InputValidator;
 import calculator.validation.validator.NumberDelimiterValidator;
 
 public interface Validators {
 
-    public InputFormatValidator getInputFormatValidator();
+    public InputValidator getInputValidator();
 
-    public DelimiterCharacterValidator getDelimiterCharacterValidator();
+    public CharacterDelimiterValidator getCharacterValidator();
 
-    public NumberDelimiterValidator getNumberDelimiterValidator();
+    public NumberDelimiterValidator getNumberValidator();
 
 }

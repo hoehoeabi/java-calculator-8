@@ -4,11 +4,14 @@ import calculator.delimiter.Delimiters;
 
 import java.util.Set;
 
-public class DelimiterCharacterValidator {
+public class CharacterDelimiterValidator {
 
     public boolean validate(String input) {
 
-        Set<Character> delimiters = Delimiters.getInstance().getDelimitersSet();
+        Set<Character> delimiters = Delimiters
+                .getInstance()
+                .getDelimitersSet();
+
         for(char c : input.toCharArray()) {
             boolean isDigit = Character.isDigit(c);
             boolean isRegisteredDelimiter = delimiters.contains(c);
