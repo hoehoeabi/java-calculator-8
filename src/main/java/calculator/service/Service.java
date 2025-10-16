@@ -16,7 +16,7 @@ public class Service {
     }
 
     private final String INPUT_FORMART = "^(?://.\\\\n)*\\d+(?:\\D\\d+)*$";
-    private final String CHECK_DELIMITER_FORMART = "^(?://.\\\\n)*\\d+$";
+    private final String CHECK_DELIMITER_FORMART = "^(?://.\\\\n)*.*";
 
     public void run(){
 
