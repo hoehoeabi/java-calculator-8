@@ -28,4 +28,8 @@ public class Delimiters {
         delimitersSet.add(delimiter);
     }
 
+    public void clear() {
+        delimitersSet.clear();
+        delimitersSet.addAll(Arrays.asList(',', ':'));
+    }
 }
