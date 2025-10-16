@@ -7,7 +7,9 @@ import java.util.Set;
 public class StringCalculator {
 
     public static int sum(String input) {
-        Set<Character> delimiters = Delimiters.getInstance().getDelimitersSet();
+        Set<Character> delimiters = Delimiters
+                .getInstance()
+                .getDelimitersSet();
         int answer = 0;
         StringBuilder sb = new StringBuilder();
         // 계산

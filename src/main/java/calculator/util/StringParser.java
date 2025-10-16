@@ -7,7 +7,9 @@ import java.util.Set;
 public class StringParser {
 
     public static String addDelimiter(String input){
-        Set<Character> delimiters = Delimiters.getInstance().getDelimitersSet();
+        Set<Character> delimiters = Delimiters
+                .getInstance()
+                .getDelimitersSet();
         int index = input.indexOf("//");
         // 커스텀 구분자가 있다면
         while(index != -1) {
