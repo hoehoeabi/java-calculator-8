@@ -3,6 +3,9 @@ package calculator.service;
 import calculator.verification.Verification;
 import camp.nextstep.edu.missionutils.Console;
 
+import static calculator.util.StringCalculator.sum;
+import static calculator.util.StringParser.addDelimiter;
+
 
 public class Service {
 
@@ -16,7 +19,6 @@ public class Service {
     private final String CHECK_DELIMITER_FORMART = "^(?://.\\\\n)*\\d+$";
 
     public void run(){
-//        Set<Character> delimiters = Delimiters.getInstance().getDelimitersSet();
 
         System.out.println("덧셈할 문자열을 입력해 주세요.\n" );
         String input = Console.readLine();
@@ -30,8 +32,7 @@ public class Service {
             throw new IllegalArgumentException();
 
         if(verification.validateInput(input, CHECK_DELIMITER_FORMART)){
-            // 구분자 추가 로직
-            // input에서 구분자를 추출하며 추출이 끝난 구분자 구문은 잘라내기
+            input = addDelimiter(input);
         }
 
         if(!verification.areCustumDelimiters(input)){
@@ -42,10 +43,7 @@ public class Service {
             throw new IllegalArgumentException();
         }
 
-        // 계산 로직
-
-
-        System.out.println("결과 : " );
+        System.out.println("결과 : " + sum(input));
 
     }
 }
