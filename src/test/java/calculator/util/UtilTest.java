@@ -2,6 +2,7 @@ package calculator.util;
 
 import calculator.delimiter.Delimiters;
 import camp.nextstep.edu.missionutils.test.NsTest;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -14,10 +15,16 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class UtilTest {
 
+    @BeforeEach
+    void setUp() {
+        Delimiters
+                .getInstance()
+                .clear();
+    }
+
     @Test
     void 문자열에서_숫자들_계산(){
         // given
-        Set<Character> delimiters = new HashSet<>(Arrays.asList(',',':'));
         String input = "11,2:3";
 
         // when & then
@@ -27,7 +34,9 @@ class UtilTest {
     @Test
     void 입력값에서_구분자_추가(){
         // given
-        Set<Character> delimiters = Delimiters.getInstance().getDelimitersSet();
+        Set<Character> delimiters = Delimiters
+                .getInstance()
+                .getDelimitersSet();
         String input = "//@\\n//#\\n11,2:3";
 
         // when
