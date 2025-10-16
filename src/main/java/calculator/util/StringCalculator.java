@@ -18,11 +18,12 @@ public class StringCalculator {
                 sb = new StringBuilder();
                 continue;
             }
-            // 숫자면
+            // 숫자면 StringBuilder에 추가
             if(Character.isDigit(c)) {
                 sb.append(c);
             }
         }
+        // 마지막 숫자는 뒤에 구분자가 없기에 따로 덧셈
         answer += Integer.parseInt(sb.toString());
         return answer;
 
