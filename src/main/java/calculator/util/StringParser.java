@@ -6,6 +6,10 @@ import java.util.Set;
 
 public class StringParser {
 
+    private StringParser() {
+        throw new IllegalStateException("StringParser is Utility class");
+    }
+
     public static String addDelimiter(String input){
         Set<Character> delimiters = Delimiters
                 .getInstance()

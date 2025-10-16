@@ -6,6 +6,10 @@ import java.util.Set;
 
 public class StringCalculator {
 
+    private StringCalculator() {
+        throw new IllegalStateException("StringCalculator is Utility class");
+    }
+
     public static int sum(String input) {
         Set<Character> delimiters = Delimiters
                 .getInstance()
