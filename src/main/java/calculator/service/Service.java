@@ -17,15 +17,16 @@ public class Service {
 
     private final String INPUT_FORMART = "^(?://.\\\\n)*\\d+(?:\\D\\d+)*$";
     private final String CHECK_DELIMITER_FORMART = "^(?://.\\\\n)*.*";
+    private final String ONLY_DELIMITER_FORMART = "^(?://.\\\\n)*";
 
     public void run(){
 
         System.out.println("덧셈할 문자열을 입력해 주세요.\n" );
         String input = Console.readLine();
 
-        if(input.isEmpty()){
+        if(input.isEmpty() || verification.validateInput(input, ONLY_DELIMITER_FORMART)){
             System.out.println("결과 : 0" );
-            return;
+            return ;
         }
 
         if(!verification.validateInput(input, INPUT_FORMART))
