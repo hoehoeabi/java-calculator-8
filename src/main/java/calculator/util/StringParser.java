@@ -12,7 +12,7 @@ public class StringParser {
         // 커스텀 구분자가 있다면
         while(index != -1) {
             delimiters.add(input.charAt(index+2));
-            input = input.substring(5);
+            input = input.substring(input.indexOf("n")+1);
             index = input.indexOf("//");
         }
         return input;
