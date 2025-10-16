@@ -16,8 +16,7 @@ public class Application {
         try{
             service.run();
         } catch (Exception e){
-            e.printStackTrace();
-            return;
+            System.out.println("[ERROR] " + e.getMessage());
         }
 
     }
