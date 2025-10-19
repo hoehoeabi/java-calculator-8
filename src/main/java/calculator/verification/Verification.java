@@ -22,20 +22,20 @@ public interface Verification {
      *
      *  @return boolean
      */
-    public boolean validateInput(String input,String regex);
+    boolean validateInput(String input,String regex);
 
     /**
      * @param input(문자열)
      * 문자들이 구분자들로만 이뤄졌는지 검증
      * @return boolean
      */
-    public boolean areCustumDelimiters(String input);
+    boolean areCustumDelimiters(String input);
 
     /**
      * @param start(문자열의 시작 글자),end(문자열의 끝 글자)
      * 숫자를 구분자로 등록했을경우 처음 혹은 마지막 숫자가 구분자인지 확인
      * @return
      */
-    public boolean haveNumberDelimiters(char start,char end);
+    boolean haveNumberDelimiters(char start,char end);
 
 }

@@ -6,10 +6,10 @@ import calculator.validation.validator.NumberDelimiterValidator;
 
 public interface Validators {
 
-    public InputValidator getInputValidator();
+    InputValidator getInputValidator();
 
-    public CharacterDelimiterValidator getCharacterValidator();
+    CharacterDelimiterValidator getCharacterValidator();
 
-    public NumberDelimiterValidator getNumberValidator();
+    NumberDelimiterValidator getNumberValidator();
 
 }
